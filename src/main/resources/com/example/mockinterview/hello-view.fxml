@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mockinterview.HelloController">
+      fx:controller="com.example.mockapp.HelloController"
+      style="-fx-background-color: #e8f5e9;">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <!-- App Logo / Title -->
+    <Label text="TalkPrep AI" textFill="#2e7d32">
+        <font>
+            <Font name="System Bold" size="36.0" />
+        </font>
+    </Label>
+
+    <Label text="Practice your English anywhere, anytime." textFill="#555555" />
+
+
+    <Button fx:id="startButton" text="Start Interview"
+            onAction="#onStartButtonClick"
+            styleClass="btn, btn-success"
+            prefHeight="50.0" prefWidth="200.0"/>
+
 </VBox>
