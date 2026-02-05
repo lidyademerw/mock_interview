@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<?import com.sun.javafx.scene.control.FakeFocusTextField?>
+<VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #f1f8e9;" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mockinterview.GalleryController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
+    </padding>
+
+    <!-- Title as seen in your sketch -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Select Your Interviewer" textFill="#2e7d32" />
+
+    <!-- The Grid: 3 columns, 2 rows -->
+    <GridPane hgap="20.0" vgap="20.0" alignment="CENTER">
+
+        <!-- Interviewer 1 -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <FontIcon iconLiteral="fas-laptop-code" iconSize="40" />
+            <Label text="Software Lead" style="-fx-font-weight: bold;"/>
+            <Button text="Select" styleClass="btn, btn-sm, btn-primary"/>
+        </VBox>
+
+        <!-- Interviewer 2 -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <FontIcon iconLiteral="fas-user-md" iconSize="40" />
+            <Label text="Medical Doctor" style="-fx-font-weight: bold;"/>
+            <Button text="Select" styleClass="btn, btn-sm, btn-primary"/>
+        </VBox>
+
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <FontIcon iconLiteral="fas-user-graduate" iconSize="40"/>
+            <Label text="Graduate" style="-fx-font-weight: bold;"/>
+            <Button text="select" styleClass="btn, btn-sm, btn-primary"/>
+
+       </VBox>
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <FontIcon iconLiteral="fas-chalkboard-teacher" iconSize="40"/>
+            <Label text="Professional Teacher" style="-fx-font-weight: bold;"/>
+            <Button text="select" styleClass="btn, btn-sm, btn-primary"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <FontIcon iconLiteral="fas-user-nurse" iconSize="40"/>
+            <Label text="nurse" style="-fx-font-weight: bold;"/>
+            <Button text="select" styleClass="btn, btn-sm, btn-primary"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <FontIcon iconLiteral="fas-microscope" iconSize="40"/>
+            <Label text="Senior Manager" style="-fx-font-weight: bold;"/>
+            <Button text="select" styleClass="btn, btn-sm, btn-primary"/>
+        </VBox>
+
+
+    </GridPane>
+</VBox>
