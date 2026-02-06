@@ -20,7 +20,7 @@
 
     <GridPane hgap="20.0" vgap="20.0" alignment="CENTER">
 
-        <!-- 3. The Column Rules (Shelf Dividers) -->
+
         <columnConstraints>
             <ColumnConstraints percentWidth="30.0" halignment="CENTER" />
             <ColumnConstraints percentWidth="30.0" halignment="CENTER" />
@@ -80,6 +80,7 @@
             <Label text="Manager" style="-fx-font-weight: bold;"/>
             <Button text="Select" onAction="#onSelectInterviewer" styleClass="btn, btn-primary"/>
         </VBox>
+
 
     </GridPane>
 
