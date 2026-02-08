@@ -37,11 +37,12 @@
             <Insets left="20" right="20" />
         </padding>
 
-        <HBox alignment="CENTER" spacing="5">
-            <Rectangle width="5" height="20" fill="#ef6c00" />
-            <Rectangle width="5" height="40" fill="#ef6c00" />
-            <Rectangle width="5" height="25" fill="#ef6c00" />
-            <Rectangle width="5" height="35" fill="#ef6c00" />
+        <HBox alignment="CENTER" spacing="8">
+            <Rectangle fx:id="bar1" width="6" height="20" arcHeight="5" arcWidth="5" fill="#ef8c00" />
+            <Rectangle fx:id="bar2" width="6" height="45" arcHeight="5" arcWidth="5" fill="#ef8c00" />
+            <Rectangle fx:id="bar3" width="6" height="30" arcHeight="5" arcWidth="5" fill="#ef8c00" />
+            <Rectangle fx:id="bar4" width="6" height="55" arcHeight="5" arcWidth="5" fill="#ef8c00" />
+            <Rectangle fx:id="bar5" width="6" height="25" arcHeight="5" arcWidth="5" fill="#ef8c00" />
         </HBox>
 
         <FontIcon iconLiteral="fas-microphone" iconSize="30" iconColor="#ef6c00" />
