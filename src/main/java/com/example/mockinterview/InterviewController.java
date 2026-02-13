@@ -7,11 +7,17 @@ import javafx.scene.control.Button;
 import javafx.scene.shape.Rectangle;
 import org.kordamp.ikonli.javafx.FontIcon;
 
+import java.io.File;
+
 public class InterviewController {
-    @FXML private Label statusLabel;
-    @FXML private Label interviewerNameLabel;
-    @FXML private FontIcon interviewerIcon;
-    @FXML private Rectangle bar1, bar2, bar3, bar4, bar5; // Add these variables
+    @FXML
+    private Label statusLabel;
+    @FXML
+    private Label interviewerNameLabel;
+    @FXML
+    private FontIcon interviewerIcon;
+    @FXML
+    private Rectangle bar1, bar2, bar3, bar4, bar5; // Add these variables
 
     private void startWaveformAnimation() {
         java.util.Random random = new java.util.Random();
@@ -47,30 +53,36 @@ public class InterviewController {
 
     @FXML
     private void handleStopAndProcess() {
-        statusLabel.setText("Thinking...");
+        statusLabel.setText("Processing your voice...");
         recorder.stopRecording();
 
         // We use a "Task" so the UI doesn't freeze while talking to the AI
-        Task<String> aiTask = new Task<>() {
+        Task<String> interactionTask = new Task<>() {
             @Override
             protected String call() throws Exception {
-                // For Day 5, we are using a placeholder string.
-                String userText = "I am interested in the " + currentRole + " position.";
-                return aiService.getAIResponse(userText, currentRole);
+                java.io.File audioFile = new java.io.File("user_voice.wav");
+                String userSpeech = aiService.transcribeAudio(audioFile);
+                updateMessage("You said: " + userSpeech);
+                return aiService.getAIResponse(userSpeech, currentRole);
             }
+
         };
 
 
-        aiTask.setOnSucceeded(e -> {
-            statusLabel.setText(aiTask.getValue());
+        interactionTask.setOnSucceeded(e -> {
+            String aiResponse = interactionTask.getValue();
+            statusLabel.setText("AI: " + aiResponse);
+
+
+            aiService.speak(aiResponse);
+
+            //  Wait 2 seconds and start listening for the user's NEXT answer
+            javafx.animation.PauseTransition pause = new javafx.animation.PauseTransition(javafx.util.Duration.seconds(5));
+            pause.setOnFinished(event -> {
+                statusLabel.setText("Interviewer is listening again...");
+                recorder.startRecording();
+            });
+            pause.play();
         });
-
-
-        aiTask.setOnFailed(e -> {
-            statusLabel.setText("Error: Check your API Key in AIService.java");
-            aiTask.getException().printStackTrace();
-        });
-
-        new Thread(aiTask).start();
     }
 }

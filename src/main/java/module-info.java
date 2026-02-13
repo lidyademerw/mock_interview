@@ -8,6 +8,7 @@ module com.example.mockinterview {
     requires org.kordamp.bootstrapfx.core;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.ikonli.fontawesome5;
+    requires javafx.media;
 
     opens com.example.mockinterview to javafx.fxml;
     exports com.example.mockinterview;
